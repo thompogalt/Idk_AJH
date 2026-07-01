@@ -14,8 +14,11 @@ os.chdir(main)
 def make_newmains(main: str) -> str:
     if main is None:
         return "none"
+
+    if not exist(main):
+        return "not exist"
     
-    return main + f"{randint(0, 999999999)}"
+    return os.path.join(main, f"{randint(0, 999999999)}")
 
 while True:
     os.mkdir(make_newmains(main))
