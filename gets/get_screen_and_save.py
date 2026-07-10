@@ -3,6 +3,7 @@ import subprocess
 import sys
 import os
 import time
+from pathlib import Path
 
 def import_install(module: str):
     try:
@@ -42,6 +43,9 @@ with mss.MSS() as sct:
         print(f"on monitor: {i}/{monitor} \n               recording 2 secends")
         for frame in range(record_screen(2, i)):
             print(f"on monitor: {i}/{monitor} \n               have recorded {frame} frames so far")
+
+with open(f"{Path(__file__).resolve().parent}\\frames\\done.txt", "w") as file:
+    file.write("laiuehrgliauehrgkyuaehrgkuhjeanriguaneriygbargbaeirgnaeiyrgh")
 
 print()
 print()
