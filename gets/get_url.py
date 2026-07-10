@@ -56,9 +56,7 @@ XNOR_module.cls()
 def check_url(url: str) -> str:
     if url is None or url == "":
         return "'url' argument is None while needing to be a url"
-    elif not url.startswith("https://www.")
-        return "'url' argument is not a link/url (does not start with https://www. or https://raw.) while needing to be a url/link"
-    elif not url.startswith("https://raw."):
+    elif not url.startswith("https://www.") or not url.startswith("https://raw."):
         return "'url' argument is not a link/url (does not start with https://www. or https://raw.) while needing to be a url/link"
     return "url_good"
 
