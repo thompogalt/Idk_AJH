@@ -38,10 +38,18 @@ def record_screen(duration_seconds, witch_monitor=1, output_dir='frames'):
 
     return frames_in_total
 
+if os.path.exists(f"{Path(__file__).resolve().parent}\\times.txt"):
+    with open(f"{Path(__file__).resolve().parent}\\times.txt", "r") as file:
+        t = file.readlines()
+        for ti in t:
+            time = ti
+else:
+    time = 2
+
 with mss.MSS() as sct:
     for i, monitor in enumerate(sct.monitors):
-        print(f"on monitor: {i}/{monitor} \n               recording 2 secends")
-        for frame in range(record_screen(2, i)):
+        print(f"on monitor: {i}/{monitor} \n               recording {time} secends")
+        for frame in range(record_screen(time, i)):
             print(f"on monitor: {i}/{monitor} \n               have recorded {frame} frames so far")
 
 with open(f"{Path(__file__).resolve().parent}\\frames\\done.txt", "w") as file:
