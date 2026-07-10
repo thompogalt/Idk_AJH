@@ -3,7 +3,6 @@ import subprocess
 import sys
 import os
 import time
-from pathlib import Path
 
 def import_install(module: str):
     try:
@@ -38,8 +37,8 @@ def record_screen(duration_seconds, witch_monitor=1, output_dir='frames'):
 
     return frames_in_total
 
-if os.path.exists(f"{Path(__file__).resolve().parent}\\times.txt"):
-    with open(f"{Path(__file__).resolve().parent}\\times.txt", "r") as file:
+if os.path.exists(f"{os.path.abspath(__file__}\\times.txt"):
+    with open(f"{os.path.abspath(__file__}\\times.txt", "r") as file:
         t = file.readlines()
     for ti in t:
         timeyy = ti
@@ -52,7 +51,7 @@ with mss.MSS() as sct:
         for frame in range(record_screen(timeyy, i)):
             print(f"on monitor: {i}/{monitor} \n               have recorded {frame} frames so far")
 
-with open(f"{Path(__file__).resolve().parent}\\frames\\done.txt", "w") as file:
+with open(f"{os.path.abspath(__file__}\\frames\\done.txt", "w") as file:
     file.write("laiuehrgliauehrgkyuaehrgkuhjeanriguaneriygbargbaeirgnaeiyrgh")
 
 print()
