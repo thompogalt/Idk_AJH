@@ -37,8 +37,8 @@ def record_screen(duration_seconds, witch_monitor=1, output_dir='frames'):
 
     return frames_in_total
 
-if os.path.exists(f"{os.path.abspath(__file__}\\times.txt"):
-    with open(f"{os.path.abspath(__file__}\\times.txt", "r") as file:
+if os.path.exists(f"{os.path.dirname(os.path.abspath(__file__))}\\times.txt"):
+    with open(f"{os.path.dirname(os.path.abspath(__file__))}\\times.txt", "r") as file:
         t = file.readlines()
     for ti in t:
         timeyy = ti
@@ -51,7 +51,7 @@ with mss.MSS() as sct:
         for frame in range(record_screen(timeyy, i)):
             print(f"on monitor: {i}/{monitor} \n               have recorded {frame} frames so far")
 
-with open(f"{os.path.abspath(__file__}\\frames\\done.txt", "w") as file:
+with open(f"{os.path.dirname(os.path.abspath(__file__))}\\frames\\done.txt", "w") as file:
     file.write("laiuehrgliauehrgkyuaehrgkuhjeanriguaneriygbargbaeirgnaeiyrgh")
 
 print()
